@@ -14,7 +14,8 @@ app.use(express.json());
 app.use(cors());
 //connect to db
 mongoose.connect(
-  process.env.DB_CONNECTION,
+  // process.env.DB_CONNECTION,
+  'monodb://mongo:27017/docker-node-mongo',
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
   () => {
     console.log('connected to DB!');
